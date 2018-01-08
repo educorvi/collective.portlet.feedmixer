@@ -1,18 +1,17 @@
-<dl class="portlet portletfeedmixer"
-    i18n:domain="collective.portlet.feedmixer">
+<section class="portlet"
+     i18n:domain="collective.portlet.feedmixer">
 
-    <dt class="portletHeader">
-        <span class="portletTopLeft"></span>
+    <header class="portletHeader">
         <span tal:content="structure view/title">
            Header
         </span>
-        <span class="portletTopRight"></span>
-    </dt>
+    </header>
 
-    <tal:entry
+    <section class="portletContent">
+      <tal:entry
         tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
         tal:repeat="entry view/entries">
-        <dd class="portletItem"
+        <div class="portletItem"
             tal:define="oddrow repeat/entry/odd"
             tal:attributes="class python:oddrow and 'portletItem even' or 'portletItem odd'">
 
@@ -25,16 +24,15 @@
                     Nov 1
                 </span>
             </a>
-        </dd>
-    </tal:entry>
+        </div>
+      </tal:entry>
+    </section>
     
-    <dd class="portletFooter">
+    <footer class="portletFooter">
       <a href="#"
-          class="tile"
-          tal:attributes="href view/more_url"
-          i18n:translate="box_full_feed_view">More&hellip;</a>
-        <span class="portletBottomLeft"></span>
-        <span class="portletBottomRight"></span>
-    </dd>
+        class="tile"
+        tal:attributes="href view/more_url"
+        i18n:translate="box_full_feed_view">Mehr&hellip;</a>
+    </footer>
 
-</dl>
+</section>

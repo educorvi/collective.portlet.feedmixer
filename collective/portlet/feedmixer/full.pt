@@ -20,17 +20,18 @@
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
-    <div class="feedEntry"
+    <section id="content-core">
+    <article class="tileItem"
         tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime"
         tal:repeat="entry view/entries">
 
-        <a href=""
-           tal:attributes="href entry/link;
-                           title entry/title">
-            <h2 tal:content="structure entry/title">
-                Feed Entry Title
-            </h2>
-        </a>
+        <h2 class="tileHeadline">
+          <a class="summary url" href=""
+            tal:content="structure entry/title"
+            tal:attributes="href entry/link;
+                            title entry/title">
+          </a>
+        </h2>
 
         <p class="discreet">
             <span tal:condition="exists:entry/author"
@@ -53,7 +54,8 @@
         <p tal:replace="structure entry/description|nothing">
            This is the entry description itself
        </p>
-    </div>
+    </article>
+    </section>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
 </metal:main>

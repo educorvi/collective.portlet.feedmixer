@@ -10,7 +10,6 @@ from plone.app.portlets.portlets import base
 from plone.memoize import request
 from plone.memoize.interfaces import ICacheChooser
 
-from zope.formlib import form
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from collective.portlet.feedmixer.interfaces import IFeedMixer
@@ -160,7 +159,7 @@ class Renderer(base.Renderer):
 class AddForm(base.AddForm):
     """Portlet add form.
     """
-    form_fields = form.Fields(IFeedMixer)
+    schema = IFeedMixer
 
     def create(self, data):
         path = self.context.__parent__.getPhysicalPath()
@@ -170,4 +169,4 @@ class AddForm(base.AddForm):
 class EditForm(base.EditForm):
     """Portlet edit form.
     """
-    form_fields = form.Fields(IFeedMixer)
+    schema = IFeedMixer
