@@ -15,7 +15,8 @@ RSS 1.0, RSS 2.0, Atom 0.3, Atom 1.0, and CDF feeds
 Installing
 ==========
 
-This package requires Plone 3.0 or later and feedparser.
+This original package requires Plone 3.0 or later and feedparser. This package is Plone 5 ready
+and tested in Plone 5 environment. It's not tested in Plone environments < 5.0.8.
 
 Installing without buildout
 ---------------------------
